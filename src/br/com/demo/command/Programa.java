@@ -1,0 +1,19 @@
+package br.com.demo.command;
+
+public class Programa {
+    public static void main(String[] args) {
+        Pedido pedido1 = new Pedido("Renato" , 200);
+        Pedido pedido2 = new Pedido("Nicole" , 300);
+
+        FilaDeTrabalho fila = new FilaDeTrabalho();
+
+        fila.adiciona(new PagaPedido(pedido1));
+        fila.adiciona(new PagaPedido(pedido2));
+        fila.adiciona(new ConcluiPedido(pedido1));
+
+        fila.processa();
+
+    }
+
+
+}
